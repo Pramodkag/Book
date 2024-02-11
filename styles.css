@@ -3,24 +3,19 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .book {
   width: 80%;
-  margin: 20px auto;
+  max-width: 800px;
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.page {
-  display: none;
-  padding: 20px;
-}
-
-.page.active {
-  display: block;
 }
 
 h1 {
@@ -32,7 +27,7 @@ h1 {
 p {
   font-size: 16px;
   line-height: 1.5;
-  color: #555;
+  color: #333;
 }
 
 button {
