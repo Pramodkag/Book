@@ -1,46 +1,37 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f9fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 .book {
   width: 80%;
-  max-width: 800px;
-  background-color: #fff;
-  border-radius: 10px;
+  margin: 0 auto;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-image: url('IMG-20231005-WA0000.jpg'); /* Replace 'background_image.jpg' with your image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border-radius: 10px;
+  color: #ffffff; /* Text color */
 }
 
-h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #007bff;
+.page {
+  display: none; /* Hide all pages by default */
 }
 
-p {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
+.page.active {
+  display: block; /* Show the active page */
+}
+
+h1, p {
+  color: inherit; /* Inherit text color from .book */
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #007bff; /* Blue button background */
+  color: white; /* White button text */
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 10px 20px;
   margin-top: 10px;
-  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker blue on hover */
 }
