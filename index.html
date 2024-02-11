@@ -1,33 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day!</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An Animated Book</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Happy Valentine's Day, [Girlfriend's Name]!</h1>
-        <p>This website is a small token of my love and appreciation for you.</p>
 
-        <div class="image-gallery">
-            <img src="image1.jpg" alt="Image 1">
-            <img src="image2.jpg" alt="Image 2">
-            <img src="image3.jpg" alt="Image 3">
-        </div>
+<div class="book">
+  <div class="page active">
+    <h1>Cover Page</h1>
+    <p>Welcome to our story...</p>
+    <button class="next" onclick="showNextPage()">Next</button>
+  </div>
+  <div class="page">
+    <h1>Chapter 1: A Knock on Destiny's Door</h1>
+    <p>Pramod's heart thumped a nervous rhythm against his ribs as he waited outside Asha's home. This wasn't an ordinary visit; it was a meeting arranged by their families, a first glimpse into a potential future. Taking a deep breath, he knocked, anticipation fluttering in his stomach like a trapped butterfly.</p>
+    <p>The door creaked open, revealing Asha's radiant smile. Her eyes, the color of warm honey, sparkled with curiosity, and her laughter, like wind chimes in a summer breeze, filled the air. From that moment, Pramod knew something had shifted within him.</p>
+    <p>The conversation flowed easily, like a familiar melody hummed by two souls attuned to the same frequency. They discovered shared laughter over childhood pranks, passionate discussions about their dreams, and a comforting silence that spoke volumes about unspoken understanding.</p>
+    <p>As the sun dipped below the horizon, casting long shadows across the room, their families exchanged knowing glances. A silent accord was reached, and with trembling hands and whispered promises, Pramod and Asha's destinies intertwined.</p>
+    <button class="next" onclick="showNextPage()">Next</button>
+    <button class="prev" onclick="showPrevPage()">Previous</button>
+  </div>
+  <div class="page">
+    <h1>Chapter 2: Embarking on a Shared Journey</h1>
+    <p>The next day, under a sky painted with the hues of celebration, Pramod slipped a ring onto Asha's finger, their vows echoing with love and commitment. The excitement crackled in the air, mingled with the sweet scent of jasmine garlands and the joyous blessings of their loved ones.</p>
+    <p>Their honeymoon train journey was a tapestry woven with stolen glances, whispered secrets, and shared dreams. As the rhythmic clatter of the wheels lulled them into a comfortable silence, their hands intertwined, fingers tracing unspoken promises.</p>
+    <p>Mumbai, the city of dreams, unfolded before them like a vibrant kaleidoscope. The salty tang of the sea breeze filled their lungs as they walked hand-in-hand on Juhu Beach, the setting sun painting the sky in fiery hues. Under the twinkling Mumbai sky, they shared popcorn and laughter in a bustling cinema hall, the flickering images on screen mirroring the blossoming love story in their hearts.</p>
+    <p>One snowy evening, amidst the playful chaos of a snow park, they fell like children, their laughter echoing through the frosty air. Building snowmen, throwing playful snowballs, and sharing a warm cup of cocoa under the twinkling fairy lights, they created a winter wonderland of memories.</p>
+    <button class="next" onclick="showNextPage()">Next</button>
+    <button class="prev" onclick="showPrevPage()">Previous</button>
+  </div>
+  <div class="page">
+    <h1>Chapter 3: Blossoming Love under Starlit Skies</h1>
+    <p>As the days turned into weeks, their love deepened like the roots of a banyan tree, sturdy and unwavering. They explored hidden cafes, discovered charming bookstores, and wandered through bustling markets, hand in hand, their love a silent language understood only by their hearts.</p>
+    <p>One starlit night, nestled amidst plush hotel sheets, their conversation transformed into whispered confessions. Vulnerability bloomed, hearts laid bare, and in the tender space between them, their first kiss sparked, igniting a fire that burned brighter with each passing moment.</p>
+    <p>The moon became their witness as they held each other close, sharing dreams and vulnerabilities, promises and laughter. In that silent embrace, they felt the universe shift, their individual stories merging into one beautiful narrative.</p>
+    <button class="next" onclick="showNextPage()">Next</button>
+    <button class="prev" onclick="showPrevPage()">Previous</button>
+  </div>
+  <div class="page">
+    <h1>Chapter 4: Forever Entwined</h1>
+    <p>As their journey neared its end, they stood overlooking the vast expanse of the ocean, the salty wind carrying whispers of forever. The setting sun cast a golden glow on their faces, reflecting the love that shone brighter than any diamond.</p>
+    <p>They vowed to navigate life's storms together, their love the anchor that would keep them steady. They promised to nurture their dreams, each other's biggest cheerleaders, celebrating triumphs and offering solace in moments of despair.</p>
+    <p>With tearful goodbyes and promises to meet again soon, they boarded their separate trains, hearts heavy with bittersweet emotions. But even as the miles stretched between them, the warmth of their connection remained, a constant ember glowing within their hearts.</p>
+    <button class="next" onclick="showNextPage()">Next</button>
+    <button class="prev" onclick="showPrevPage()">Previous</button>
+  </div>
+  <div class="page">
+    <h1>Epilogue: A Love Story Unfolds</h1>
+    <p>Their story wasn't just about a chance meeting or a whirlwind romance. It was about two souls finding their missing pieces in each other, about laughter shared and tears dried, about dreams woven together and promises kept. It was about the quiet moments of understanding, the unspoken communication, and the unwavering support that formed the bedrock of their love.</p>
+    <p>As Pramod and Asha continued their journey, their love story unfolded like a timeless ballad, etched in the tapestry of their lives. With every shared sunrise and whispered prayer, every triumph and struggle they faced hand-in-hand, their love grew stronger, a testament to the enduring power of two hearts beating as one.</p>
+  </div>
+</div>
 
-        <p>Here are some reasons why I love you:</p>
-        <ul>
-            <li>Your [positive quality 1]</li>
-            <li>Your [positive quality 2]</li>
-            <li>Your [positive quality 3]</li>
-            </ul>
+<script>
+  let currentPageIndex = 0;
+  const pages = document.querySelectorAll('.page');
+  function showNextPage() {
+    pages[currentPageIndex].classList.remove('active');
+    currentPageIndex++;
+    if (currentPageIndex >= pages.length) {
+      currentPageIndex = 0; // Reset to first page
+    }
+    pages[currentPageIndex].classList.add('active');
+  }
+  function showPrevPage() {
+    pages[currentPageIndex].classList.remove('active');
+    currentPageIndex--;
+    if (currentPageIndex < 0) {
+      currentPageIndex = pages.length - 1; // Set to last page
+    }
+    pages[currentPageIndex].classList.add('active');
+  }
+</script>
 
-        <p>I feel so lucky to have you in my life. You make me happy every day.</p>
-
-        <p>Love,</p>
-        <p>[Your Name]</p>
-    </div>
 </body>
 </html>
